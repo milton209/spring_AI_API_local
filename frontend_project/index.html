@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spring AI Frontend</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="container">
+      <h1>Spring AI Demo</h1>
+      <p>Interface moderna para conversar com o modelo, criar receitas e gerar imagens</p>
+    </div>
+  </header>
+
+  <main class="container grid">
+    <section class="card">
+      <h2>Chat Simples</h2>
+      <form id="form-chat">
+        <label for="chat-prompt">Pergunta</label>
+        <textarea id="chat-prompt" rows="4" placeholder="Digite sua pergunta"></textarea>
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+      <div class="result">
+        <div class="loader" id="chat-loader"></div>
+        <pre id="chat-result"></pre>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Chat com Opções</h2>
+      <form id="form-chat-options">
+        <label for="chat-options-prompt">Pergunta</label>
+        <textarea id="chat-options-prompt" rows="4" placeholder="Digite sua pergunta"></textarea>
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+      <div class="result">
+        <div class="loader" id="chat-options-loader"></div>
+        <pre id="chat-options-result"></pre>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Recipe Creator</h2>
+      <form id="form-recipe">
+        <label for="ingredients">Ingredientes</label>
+        <input id="ingredients" type="text" placeholder="ex: tomate, cebola, alho">
+
+        <label for="cuisine">Culinária</label>
+        <input id="cuisine" type="text" value="any">
+
+        <label for="restrictions">Restrições Alimentares</label>
+        <input id="restrictions" type="text" value="none">
+
+        <button type="submit" class="btn">Gerar Receita</button>
+      </form>
+      <div class="result">
+        <div class="loader" id="recipe-loader"></div>
+        <pre id="recipe-result"></pre>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Gerar Imagem</h2>
+      <form id="form-image">
+        <label for="image-prompt">Prompt</label>
+        <input id="image-prompt" type="text" placeholder="Descreva a imagem">
+
+        <div class="grid-2">
+          <div>
+            <label for="quality">Qualidade</label>
+            <select id="quality">
+              <option value="hd">hd</option>
+              <option value="standard">standard</option>
+            </select>
+          </div>
+          <div>
+            <label for="n">Quantidade</label>
+            <input id="n" type="number" min="1" value="1">
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <label for="height">Altura</label>
+            <input id="height" type="number" min="64" value="1024">
+          </div>
+          <div>
+            <label for="width">Largura</label>
+            <input id="width" type="number" min="64" value="1024">
+          </div>
+        </div>
+
+        <button type="submit" class="btn">Gerar</button>
+      </form>
+      <div class="result">
+        <div class="loader" id="image-loader"></div>
+        <div id="image-results" class="image-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="container">
+      <span>Feito com Spring Boot + Spring AI</span>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
