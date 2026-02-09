@@ -53,6 +53,15 @@ See controller: [GenarativeAIController.java](file:///c:/Users/Milton/Downloads/
    - `npm start`
    - Open `http://localhost:3000/`
 
+### Windows Configuration Note (Important)
+If you encounter an "Invalid options object" error related to `allowedHosts` when running `npm start` on Windows, this is due to a Webpack Dev Server security check conflict with the proxy setup.
+
+**Fix implemented:** A `.env` file has been added to the `frontend/` directory with:
+```ini
+DANGEROUSLY_DISABLE_HOST_CHECK=true
+```
+This environment variable disables the host check, allowing the development server to run correctly with the proxy configuration on Windows.
+
 ## CORS
 - Configured to allow `http://localhost:3000` accessing backend on `http://localhost:8080`.
 - File: [WebConfig.java](file:///c:/Users/Milton/Downloads/spring-ai-erudio-deepseek-ollama/src/main/java/br/com/erudio/config/WebConfig.java#L16-L22)
