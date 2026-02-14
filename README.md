@@ -70,6 +70,8 @@ This environment variable disables the host check, allowing the development serv
 - The chat UI calls: `GET http://localhost:8080/ask-ai?prompt=...`
 - Responses are rendered with Markdown via `react-markdown` + `remark-gfm`
 - Local history persists across reloads; click “Clear” to reset
+- <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/83cc3880-0e5d-4edf-b520-22235f329bdc" />
+
 
 ## Adding Streaming (Future)
 - Backend:
